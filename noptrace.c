@@ -43,8 +43,9 @@
 #include <linux/sched.h>
 #include <linux/types.h>
 
-
-
+#ifdef MODULE_LICENSE
+MODULE_LICENSE("GPL");
+#endif
 
 int (*real_ptrace) (int, int, int, int);
 int new_ptrace  (int, int, int, int);
