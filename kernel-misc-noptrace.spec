@@ -16,7 +16,7 @@ License:	GPL
 Group:		Base/Kernel
 #Source0:	http://www.hackinglinuxexposed.com/tools/p/%{_orig_name}.c
 Source0:	http://dione.ids.pl/~bartowl/noptrace.c
-%{!?_without_dist_kernel:BuildRequires:         kernel-headers}
+%{!?_without_dist_kernel:BuildRequires:	kernel-headers}
 BuildRequires:	%{kgcc_package}
 BuildRequires:	rpmbuild(macros) >= 1.118
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
