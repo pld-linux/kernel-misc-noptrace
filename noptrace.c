@@ -2,6 +2,8 @@
  * noptrace kernel module.
  *
  * Copyright Brian Hatch, 2001. Released under the GPL.
+ * taken from http://www.hackinglinuxexposed.com/tools/p/noptrace.c
+ * modified by BartOwl to NOT taint the 2.4 kernels
  *
  * Disable the ptrace system call entirely.  Used
  * to help prevent attacks against setuserid binaries
