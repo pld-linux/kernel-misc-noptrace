@@ -1,10 +1,12 @@
-# conditional build
-# _without_dist_kernel          without distribution kernel
+#
+# Conditional build:
+# _without_dist_kernel	- without distribution kernel
+#
 
 %define         _orig_name      noptrace
 
 Summary:	Kernel module for disabling ptrace()
-Summary(pl):	Modu³ kernela wy³±czaj±cy ptrace()
+Summary(pl):	Modu³ j±dra wy³±czaj±cy ptrace()
 Name:		kernel-misc-%{_orig_name}
 # Is there any version???
 Version:	0.1
@@ -15,29 +17,29 @@ Group:		Base/Kernel
 Source0:	http://www.hackinglinuxexposed.com/tools/p/%{_orig_name}.c
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers}
 BuildRequires:	%{kgcc_package}
-Prereq:		/sbin/depmod
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
+Requires(post,postun):	/sbin/depmod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kernel module for disabling ptrace().
+Kernel module for disabling ptrace() system call.
 
 %description -l pl
-Modu³ kernela wy³±czaj±cy ptrace().
+Modu³ kernela wy³±czaj±cy wywo³anie systemowe ptrace().
 
 %package -n kernel-smp-misc-%{_orig_name}
-Summary:	Kernel module for disabling ptrace()
-Summary(pl):	Modu³ kernela wy³±czaj±cy ptrace()
+Summary:	SMP kernel module for disabling ptrace()
+Summary(pl):	Modu³ j±dra SMP wy³±czaj±cy ptrace()
 Release:	%{_rel}@%{_kernel_ver_str}
-%{!?_without_dist_kernel:%requires_releq_kernel_smp}
 Group:		Base/Kernel
-Prereq:		/sbin/depmod
+%{!?_without_dist_kernel:%requires_releq_kernel_smp}
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-misc-%{_orig_name}
-Kernel module for disabling ptrace() for SMP.
+SMP kernel module for disabling ptrace() system call.
 
 %description -n kernel-smp-misc-%{_orig_name} -l pl
-Modu³ kernela wy³±czaj±cy ptrace() dla kerneli SMP.
+Modu³ j±dra SMP wy³±czaj±cy wywo³anie systemowe ptrace().
 
 %prep
 %setup -q -T -c
