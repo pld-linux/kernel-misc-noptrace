@@ -15,7 +15,7 @@ Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://www.hackinglinuxexposed.com/tools/p/%{_orig_name}.c
-# Source0-md5:	a6f1ea1f4842caa43d720c532b8a1c18
+# NoSource0-md5: a6f1ea1f4842caa43d720c532b8a1c18
 %{!?_without_dist_kernel:BuildRequires:         kernel-headers}
 BuildRequires:	%{kgcc_package}
 %{!?_without_dist_kernel:%requires_releq_kernel_up}
