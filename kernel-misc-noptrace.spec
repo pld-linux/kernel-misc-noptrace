@@ -68,16 +68,16 @@ cp %{_orig_name}smp.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/%{_orig
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
+/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
 
 %postun
-/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
+/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
 
 %post	-n kernel-smp-misc-%{_orig_name}
-/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
+/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
 
 %postun -n kernel-smp-misc-%{_orig_name}
-/sbin/depmod -a -F /boot/System.map-%{_kernel_ver} %{_kernel_ver}
+/sbin/depmod -a %{!?_without_dist_kernel:-F /boot/System.map-%{_kernel_ver} }%{_kernel_ver}
 
 %files
 %defattr(644,root,root,755)
