@@ -10,7 +10,7 @@ Summary(pl):	Modu³ j±dra wy³±czaj±cy ptrace()
 Name:		kernel-misc-%{_orig_name}
 # Is there any version???
 Version:	0.1
-%define	_rel	2
+%define	_rel	3
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
