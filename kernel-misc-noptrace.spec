@@ -5,7 +5,7 @@
 
 Summary:	Kernel module for disabling ptrace()
 Summary(pl):	Modu³ kernela wy³±czaj±cy ptrace()
-Name:		kernel-net-%{_orig_name}
+Name:		kernel-misc-%{_orig_name}
 # Is there any version???
 Version:	0.1
 %define	_rel	1
@@ -25,7 +25,7 @@ Kernel module for disabling ptrace().
 %description -l pl
 Modu³ kernela wy³±czaj±cy ptrace().
 
-%package -n kernel-smp-net-%{_orig_name}
+%package -n kernel-smp-misc-%{_orig_name}
 Summary:	Kernel module for disabling ptrace()
 Summary(pl):	Modu³ kernela wy³±czaj±cy ptrace()
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -33,10 +33,10 @@ Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Prereq:		/sbin/depmod
 
-%description -n kernel-smp-net-%{_orig_name}
+%description -n kernel-smp-misc-%{_orig_name}
 Kernel module for disabling ptrace() for SMP.
 
-%description -n kernel-smp-net-%{_orig_name} -l pl
+%description -n kernel-smp-misc-%{_orig_name} -l pl
 Modu³ kernela wy³±czaj±cy ptrace() dla kerneli SMP.
 
 %prep
@@ -70,16 +70,16 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 /sbin/depmod -a
 
-%post -n kernel-smp-net-%{_orig_name}
+%post -n kernel-smp-misc-%{_orig_name}
 /sbin/depmod -a
 
-%postun -n kernel-smp-net-%{_orig_name}
+%postun -n kernel-smp-misc-%{_orig_name}
 /sbin/depmod -a
 
 %files
 %defattr(644,root,root,755)
 /lib/modules/%{_kernel_ver}/misc/*
 
-%files -n kernel-smp-net-%{_orig_name}
+%files -n kernel-smp-misc-%{_orig_name}
 %defattr(644,root,root,755)
 /lib/modules/%{_kernel_ver}smp/misc/*
