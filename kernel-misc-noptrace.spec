@@ -6,7 +6,7 @@
 %define         _orig_name      noptrace
 
 Summary:	Kernel module for disabling ptrace()
-Summary(pl):	Modu³ j±dra wy³±czaj±cy ptrace()
+Summary(pl.UTF-8):   ModuÅ‚ jÄ…dra wyÅ‚Ä…czajÄ…cy ptrace()
 Name:		kernel-misc-%{_orig_name}
 # Is there any version???
 Version:	0.1
@@ -26,12 +26,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Kernel module for disabling ptrace() system call.
 
-%description -l pl
-Modu³ kernela wy³±czaj±cy wywo³anie systemowe ptrace().
+%description -l pl.UTF-8
+ModuÅ‚ kernela wyÅ‚Ä…czajÄ…cy wywoÅ‚anie systemowe ptrace().
 
 %package -n kernel-smp-misc-%{_orig_name}
 Summary:	SMP kernel module for disabling ptrace()
-Summary(pl):	Modu³ j±dra SMP wy³±czaj±cy ptrace()
+Summary(pl.UTF-8):   ModuÅ‚ jÄ…dra SMP wyÅ‚Ä…czajÄ…cy ptrace()
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{!?_without_dist_kernel:%requires_releq_kernel_smp}
@@ -40,8 +40,8 @@ Requires(post,postun):	/sbin/depmod
 %description -n kernel-smp-misc-%{_orig_name}
 SMP kernel module for disabling ptrace() system call.
 
-%description -n kernel-smp-misc-%{_orig_name} -l pl
-Modu³ j±dra SMP wy³±czaj±cy wywo³anie systemowe ptrace().
+%description -n kernel-smp-misc-%{_orig_name} -l pl.UTF-8
+ModuÅ‚ jÄ…dra SMP wyÅ‚Ä…czajÄ…cy wywoÅ‚anie systemowe ptrace().
 
 %prep
 %setup -q -T -c
