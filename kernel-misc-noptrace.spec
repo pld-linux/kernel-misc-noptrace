@@ -6,7 +6,7 @@
 %define         _orig_name      noptrace
 
 Summary:	Kernel module for disabling ptrace()
-Summary(pl.UTF-8):   Moduł jądra wyłączający ptrace()
+Summary(pl.UTF-8):	Moduł jądra wyłączający ptrace()
 Name:		kernel-misc-%{_orig_name}
 # Is there any version???
 Version:	0.1
@@ -31,7 +31,7 @@ Moduł kernela wyłączający wywołanie systemowe ptrace().
 
 %package -n kernel-smp-misc-%{_orig_name}
 Summary:	SMP kernel module for disabling ptrace()
-Summary(pl.UTF-8):   Moduł jądra SMP wyłączający ptrace()
+Summary(pl.UTF-8):	Moduł jądra SMP wyłączający ptrace()
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{!?_without_dist_kernel:%requires_releq_kernel_smp}
